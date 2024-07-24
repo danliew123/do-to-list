@@ -1,0 +1,145 @@
+body {
+    background-color: rgb(118, 118, 206)
+}
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1fr;
+}
+
+#header {
+    color: whitesmoke;
+    text-align: center;
+    padding: 16px;
+}
+
+#content {
+    display: grid;
+    margin: 32px;
+    margin-top: 0px;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 16px;
+}
+
+#adder {
+    background-color: rgb(118, 118, 206);
+    border: 4px solid aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#adderbtn{
+    color: rgb(70, 128, 179);
+    font-size: 100px;
+    font-weight: 800;
+    height: 120px;
+    width: 120px;
+    border: 4px solid aliceblue;
+    border-radius: 50%; 
+}
+
+#adderbtn:hover {
+    box-shadow: 5px 5px 2px rgb(87, 45, 141);
+}
+
+#new-project-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.project {
+    height: 300px;
+    background-color: aliceblue;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.project h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.project ul{
+    position: relative;
+    right: 20px;
+    font-size: 20px;
+}
+
+.project .icons{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.icons {
+    display: flex;
+    margin-bottom: 4px;
+    margin-right: 4px;
+}
+
+.editbtn, .deletebtn {
+    width: 40px;
+    height: 40px;
+}
+
+.editbtn img:hover, .deletebtn img:hover {
+    border: 4px dashed black;
+}
+
+.todolist {
+    background-color: aliceblue;
+    width: max(600px,60%);
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 16px;
+    border-radius: 8px;
+}
+
+.listname{
+    margin-left: 32px;
+    margin-top: 16px;
+    font-size: 40px;
+}
+
+.todolist ul{
+    width: 100%;
+}
+
+.todolist ul li{
+    font-size: 32px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.title{
+    flex-grow: 1;
+    padding-left: 8px;
+    margin-right: 16px;
+}
+
+.title:hover{
+    border: 4px solid rgb(118, 118, 206);
+}
+
+.todobtns {
+    display: flex;
+    margin-right: 16px;
+}
+
+
+
