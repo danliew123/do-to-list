@@ -32,6 +32,7 @@ function todoListLoad(project) {
             return
         } else {
             project.name = newName;
+            saveProjects()
             todoListLoad(project)
         } 
     })
@@ -91,8 +92,9 @@ function todoListLoad(project) {
                     title.classList.add('done');
                 } else if (projects[projectIndex].todos[i].done === true) {
                     projects[projectIndex].todos[i].done = false;
-                    title.classList.remove('done')
+                    title.classList.remove('done');
                 }
+                saveProjects()
             })
 
         const todobtns = document.createElement('div');
@@ -107,7 +109,8 @@ function todoListLoad(project) {
                 return
             } else {
                 projects[projectIndex].todos[i].title = newTitle;
-                todoListLoad(projects[projectIndex])
+                saveProjects();
+                todoListLoad(projects[projectIndex]);
             }
         })
         todobtns.appendChild(editbtn);
@@ -120,6 +123,7 @@ function todoListLoad(project) {
         deletebtn.classList.add('deletebtn');
         deletebtn.addEventListener('click', () => {
             removeTodoFromTodos(projectIndex, i)
+            saveProjects()
             todoListLoad(projects[projectIndex])
         })
         todobtns.appendChild(deletebtn);

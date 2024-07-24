@@ -3,7 +3,7 @@ import { addNewProjectForm } from './addNewProject';
 import { todoListLoad } from './todoListLoad';
 import edit from './pencil-box-outline.svg';
 import delet from './delete-outline.svg';
-import {projects} from './localStorage'
+import {projects, saveProjects} from './localStorage'
 
 
 const content = document.querySelector('#content');
@@ -52,6 +52,7 @@ function render() {
                     console.log(projects[i].todos[j])
                     myTodo.classList.remove('done')
                 }
+                saveProjects()
                 
             })
             myTodoList.appendChild(myTodo)
@@ -77,6 +78,7 @@ function render() {
         myDeleteBtn.src = delet;
         myDeleteBtn.addEventListener('click', () => {
             removeProjectfromProjects(i);
+            saveProjects()
             projectLoad();
         })
         myDeleteBtnDiv.appendChild(myDeleteBtn);
